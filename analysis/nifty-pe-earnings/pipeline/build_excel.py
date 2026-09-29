@@ -147,7 +147,7 @@ ws['A18'].font = Font(name=BODY, bold=True, size=10, color=INK)
 ws['A19'] = 'Latest minus mid-2022 low'; ws['B19'] = '=D9-D12'; ws['B19'].number_format = '+0.00;-0.00'
 ws['A20'] = 'Latest minus March-2023 low'
 ws['B20'] = '=D9-MIN(Data!$H$840:$H$880)'; ws['B20'].number_format = '+0.00;-0.00'
-ws['C19'] = 'Differences this small are inside the digitisation error (about ±0.3x), so treat "cheapest since 2020" as Bloomberg\'s call on its own data.'
+ws['C19'] = 'Differences this small are inside the digitisation error (about ±0.4x), so treat "cheapest since 2020" as Bloomberg\'s call on its own data.'
 ws['C19'].font = Font(name=BODY, size=9, color=INK2)
 ws['A22'] = 'Share of days where the rebuilt P/E sits inside the chart band'
 ws['B22'] = f'=COUNTIF(Data!$L${FIRST}:$L${LAST},"yes")/(COUNTIF(Data!$L${FIRST}:$L${LAST},"yes")+COUNTIF(Data!$L${FIRST}:$L${LAST},"no"))'
@@ -218,6 +218,24 @@ ws.cell(row=rr + 1, column=1, value='FY21 to FY26 actual EPS CAGR').font = Font(
 ws.cell(row=rr + 1, column=2, value=f'=(B{fy26}/B{fy21})^(1/5)-1').number_format = '0.0%'
 ws.cell(row=rr + 2, column=1, value='Forward EPS multiple, base date to latest (from Summary)').font = Font(name=BODY, bold=True, size=10)
 ws.cell(row=rr + 2, column=2, value='=Summary!G8').number_format = '0.00"x"'
+ws.cell(row=rr + 5, column=1, value='C. Consensus FY27 EPS and the 12-month forward blend').font = Font(name=BODY, bold=True, size=12, color=INK)
+cons = [('Consensus FY27 EPS, mid-2025 (₹)', 1357, 'JM Financial Nifty50 Analyser (Bloomberg consensus), via Moneycontrol / 5paisa, 3 Jun 2026'),
+        ('Consensus FY27 EPS, May 2026 (₹)', 1235, 'Same source')]
+for k, (lab, v, src) in enumerate(cons):
+    r = rr + 6 + k
+    ws.cell(row=r, column=1, value=lab)
+    ws.cell(row=r, column=2, value=v).number_format = '#,##0'
+    ws.cell(row=r, column=2).font = Font(name=BODY, size=10, color=BLUE_INPUT)
+    ws.cell(row=r, column=6, value=src)
+ws.cell(row=rr + 8, column=1, value='Cut in consensus FY27 EPS')
+ws.cell(row=rr + 8, column=2, value=f'=B{rr + 7}/B{rr + 6}-1').number_format = '0.0%'
+ws.cell(row=rr + 9, column=1, value='50/50 blend of MOFSL FY27E and FY28E (₹): what a 12-month forward figure looks like in late September')
+ws.cell(row=rr + 9, column=2, value=f'=0.5*B{hdr_row + 7}+0.5*B{hdr_row + 8}').number_format = '#,##0'
+ws.cell(row=rr + 10, column=1, value='Latest implied forward EPS on the Data sheet (₹)')
+ws.cell(row=rr + 10, column=2, value='=Summary!E9').number_format = '#,##0'
+ws.cell(row=rr + 11, column=1, value=('Actual EPS roughly doubled FY21-FY26; the rest of the 2.3x rise in forward EPS is forecast, since the '
+                                      'late-September 12-month window is about half FY27 and half FY28.'))
+ws.cell(row=rr + 11, column=1).font = Font(name=BODY, size=9, italic=True, color=INK2)
 ws.cell(row=rr + 3, column=1, value=('FY20 actual EPS is not cleanly reported: MOFSL\'s FY21 figure implies about ₹472, other houses '
                                      'put FY20 near ₹400, because constituents and consolidation differ. So the comparison starts at FY21.'))
 ws.cell(row=rr + 3, column=1).font = Font(name=BODY, size=9, italic=True, color=INK2)
@@ -238,7 +256,7 @@ lines = [
     ('   For each trading day the top and bottom edge of the orange stroke are read. Half the stroke width (4.25 px, about 0.03x) is taken off each edge, which leaves the range the true value must lie in.', False),
     ('3. Implied forward EPS = Nifty close / digitised forward P/E, then a centred 21-trading-day median (forward EPS moves slowly; the median removes reading noise).', False),
     ('4. Rebuilt forward P/E = Nifty close / smoothed forward EPS. This puts back the real day-to-day moves from actual prices. It sits inside the chart band on about 86% of days; when outside, the median miss is 0.03x and the worst is 0.26x.', False),
-    ('5. Against seven readings published with a Bloomberg attribution (Validation sheet), the rebuilt series differs by -0.36x to +0.34x. Treat every P/E here as accurate to about ±0.3x.', False),
+    ('5. Against seven readings published with a Bloomberg attribution (Validation sheet), the rebuilt series differs by -0.36x to +0.34x. Treat every P/E here as accurate to about ±0.4x.', False),
     ('6. The last Bloomberg point is 28 Sep 2026 (the final downward tick of the line, the day Nifty fell 1.6%). Nothing is extrapolated past the chart.', False),
     ('7. Indices: price and forward EPS are rebased to 100 on the base date on the Summary sheet (2 Jun 2020). Change that date and the chart and table update.', False),
     ('', False),
@@ -272,12 +290,12 @@ heights = {1: 10, 2: 30, 3: 18, 4: 18, 5: 8, 6: 34, 7: 6}
 for r, hgt in heights.items():
     ws.row_dimensions[r].height = hgt
 
-ws['B2'] = 'Since June 2020, the Nifty and its earnings have both grown about 2.3 times'
+ws['B2'] = 'Since June 2020, the Nifty and its expected earnings have both grown about 2.3 times'
 ws['B2'].font = Font(name=BRAND, size=20, bold=True, color=INK)
 ws['B3'] = ('That is why the forward P/E is back near 17x, the level Bloomberg flagged as the cheapest since 2020. '
-            'Top: price and forward earnings, indexed to 100 on 2 Jun 2020.')
+            'Top: price and expected earnings, indexed to 100 on 2 Jun 2020.')
 ws['B3'].font = Font(name=BRAND, size=11, color=INK2)
-ws['B4'] = 'Bottom: the 12-month forward P/E itself.'
+ws['B4'] = 'Bottom: the 12-month forward P/E, which is price divided by expected earnings.'
 ws['B4'].font = Font(name=BRAND, size=11, color=INK2)
 
 # key-number strip (formulas)
@@ -349,7 +367,7 @@ top = LineChart()
 top.y_axis.crossAx = 500
 top.x_axis = DateAxis(crossAx=100)
 add_line(top, 9, C_PRICE, 1.75, 'Nifty 50 (price)')
-add_line(top, 10, C_EPS, 2.25, 'Nifty 50 forward earnings (EPS)')
+add_line(top, 10, C_EPS, 2.25, 'Nifty 50 expected earnings (12-month forward EPS)')
 top.set_categories(dates)
 style_axes(top, 50, 275, 50, '0')
 top.y_axis.title = 'Index, 2 Jun 2020 = 100'
@@ -380,10 +398,10 @@ ws.add_chart(top, 'B8')
 ws.add_chart(bot, 'B27')
 
 foot = [
-    (41, ('Source: Bloomberg (Nifty 50 12-month forward P/E, digitised from Bloomberg\'s chart; accurate to about ±0.3x), '
+    (41, ('Source: Bloomberg (Nifty 50 12-month forward P/E, digitised from Bloomberg\'s chart; accurate to about ±0.4x), '
           'NSE via Yahoo Finance (Nifty 50 closes). Forward EPS = Nifty close ÷ forward P/E, 21-day median. Data to 28 Sep 2026.'), 8, INK3, False),
-    (42, ('Forward EPS is the analyst consensus for the next 12 months, which has been cut this year: FY27 consensus fell from ₹1,357 to ₹1,235 '
-          '(JM Financial, Bloomberg consensus).'), 8, INK3, False),
+    (42, ('Expected earnings are analyst forecasts for the next 12 months. FY27 consensus fell from ₹1,357 to ₹1,235 in the year to May 2026 '
+          '(JM Financial, Bloomberg consensus). Actual reported Nifty EPS rose from ₹539 (FY21) to ₹1,065 (FY26), per Motilal Oswal.'), 8, INK3, False),
     (44, '1 Finance | SEBI Registered Investment Advisor. This content is for information and educational purposes only. '
          'Please consult a Qualified Financial Advisor before making investment decisions.', 8, INK3, True),
 ]
