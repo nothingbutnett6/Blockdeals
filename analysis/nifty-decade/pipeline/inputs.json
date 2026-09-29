@@ -1,0 +1,392 @@
+{
+ "switch_prev_date": "30 Mar 2021",
+ "switch_prev_close": 14845.1,
+ "switch_prev_pe": 40.43,
+ "switch_date": "31 Mar 2021",
+ "switch_close": 14690.7,
+ "switch_pe": 33.2,
+ "bbg_avg_ratio": 1.14,
+ "latest_pe": 19.26,
+ "latest_pe_note": "28 Sep 2026 NSE P/E (19.26) per Nippon India MF \"Markets for You\" daily note citing NSE; month-end for September not yet published. Downstox showed 19.74 as of 18 Sep.",
+ "crosscheck": [
+  {
+   "date": "2016-12-30",
+   "downstox": 21.93,
+   "other": 21.93,
+   "source": "NSE Indices, Index Dashboard Dec 2016",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/IISL_Index_Dashboard_DEC2016.pdf"
+  },
+  {
+   "date": "2017-03-31",
+   "downstox": 23.3,
+   "other": 23.26,
+   "source": "Nippon India MF, Markets for You (NSE data)",
+   "type": "month-end",
+   "url": "https://mf.nipponindiaim.com/LearnAndInvest/MarketsForYouDocuments/Markets-for-You-April-03-2017.pdf"
+  },
+  {
+   "date": "2017-12-29",
+   "downstox": 26.92,
+   "other": 26.92,
+   "source": "Nippon India MF, Markets for You (NSE data)",
+   "type": "month-end",
+   "url": "https://mf.nipponindiaim.com/LearnAndInvest/MarketsForYouDocuments/Markets-for-You-January-01-2018.pdf"
+  },
+  {
+   "date": "2018-01-31",
+   "downstox": 27.5,
+   "other": 27.5,
+   "source": "NSE Indices, Index Dashboard Jan 2018",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/IISL_Index_Dashboard_JAN2018.pdf"
+  },
+  {
+   "date": "2018-08-31",
+   "downstox": 28.4,
+   "other": 28.4,
+   "source": "Nippon India MF, Markets for You (NSE data)",
+   "type": "month-end",
+   "url": "https://mf.nipponindiaim.com/LearnAndInvest/MarketsForYouDocuments/Markets-for-You-September-03-2018.pdf"
+  },
+  {
+   "date": "2018-12-31",
+   "downstox": 26.17,
+   "other": 26.17,
+   "source": "Nippon India MF, Markets for You (NSE data)",
+   "type": "month-end",
+   "url": "https://mf.nipponindiaim.com/LearnAndInvest/MarketsForYouDocuments/Markets-for-You-January-01-2019.pdf"
+  },
+  {
+   "date": "2019-03-29",
+   "downstox": 29.0,
+   "other": 29.01,
+   "source": "NSE Indices, Index Dashboard Mar 2019",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/Index_Dashboard_MAR2019.pdf"
+  },
+  {
+   "date": "2019-06-28",
+   "downstox": 29.0,
+   "other": 28.98,
+   "source": "Nippon India MF, Markets for You (NSE data)",
+   "type": "month-end",
+   "url": "https://mf.nipponindiaim.com/LearnAndInvest/MarketsForYouDocuments/Markets-for-You-July-01-2019.pdf"
+  },
+  {
+   "date": "2019-12-31",
+   "downstox": 28.3,
+   "other": 28.3,
+   "source": "NSE Indices, Index Dashboard Dec 2019",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_DEC2019.pdf"
+  },
+  {
+   "date": "2020-03-31",
+   "downstox": 19.4,
+   "other": 19.38,
+   "source": "NSE Indices, Index Dashboard Mar 2020",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/Index_Dashboard_MAR2020.pdf"
+  },
+  {
+   "date": "2020-06-30",
+   "downstox": 26.3,
+   "other": 26.32,
+   "source": "NSE Indices, Index Dashboard Jun 2020",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_JUN2020.pdf"
+  },
+  {
+   "date": "2020-12-31",
+   "downstox": 38.45,
+   "other": 38.45,
+   "source": "NSE Indices, Index Dashboard Dec 2020",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_DEC2020.pdf"
+  },
+  {
+   "date": "2021-02-26",
+   "downstox": 39.6,
+   "other": 39.65,
+   "source": "NSE Indices, Index Dashboard Feb 2021",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_FEB2021.pdf"
+  },
+  {
+   "date": "2021-03-30",
+   "downstox": 40.43,
+   "other": 40.43,
+   "source": "Nippon India MF, Markets for You (NSE data), last standalone day",
+   "type": "daily",
+   "url": "https://mf.nipponindiaim.com/LearnAndInvest/MarketsForYouDocuments/Markets-for-You-March-31-2021.pdf"
+  },
+  {
+   "date": "2021-03-31",
+   "downstox": 33.2,
+   "other": 33.2,
+   "source": "NSE Indices, Index Dashboard Mar 2021 (first consolidated)",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_MAR2021.pdf"
+  },
+  {
+   "date": "2021-10-29",
+   "downstox": 25.7,
+   "other": 25.71,
+   "source": "NSE Indices, Index Dashboard Oct 2021",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_OCT2021.pdf"
+  },
+  {
+   "date": "2022-06-30",
+   "downstox": 19.5,
+   "other": 19.5,
+   "source": "Nippon India MF, Markets for You (NSE data)",
+   "type": "month-end",
+   "url": "https://mf.nipponindiaim.com/LearnAndInvest/MarketsForYou/markets-for-you-july-01-2022.html"
+  },
+  {
+   "date": "2022-12-30",
+   "downstox": 21.79,
+   "other": 21.79,
+   "source": "NSE Indices, Index Dashboard Dec 2022",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_DEC2022.pdf"
+  },
+  {
+   "date": "2023-03-31",
+   "downstox": 20.4,
+   "other": 20.44,
+   "source": "NSE Indices, Index Dashboard Mar 2023",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_MAR2023.pdf"
+  },
+  {
+   "date": "2023-12-29",
+   "downstox": 23.17,
+   "other": 23.17,
+   "source": "NSE Indices, Index Dashboard Dec 2023",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_DEC2023.pdf"
+  },
+  {
+   "date": "2024-09-30",
+   "downstox": 24.3,
+   "other": 24.26,
+   "source": "NSE Indices, Index Dashboard Sep 2024",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_SEP2024.pdf"
+  },
+  {
+   "date": "2025-03-28",
+   "downstox": 21.4,
+   "other": 21.37,
+   "source": "NSE Indices, Index Dashboard Mar 2025",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_MAR2025.pdf"
+  },
+  {
+   "date": "2025-12-31",
+   "downstox": 22.75,
+   "other": 22.75,
+   "source": "NSE Indices, Index Dashboard Dec 2025",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_DEC2025.pdf"
+  },
+  {
+   "date": "2026-03-30",
+   "downstox": 19.6,
+   "other": 19.62,
+   "source": "NSE Indices, Index Dashboard Mar 2026",
+   "type": "primary, month-end",
+   "url": "https://mondovisione.com/_assets/files/NSE_Index_Dashboard_MAR2026.pdf"
+  },
+  {
+   "date": "2026-07-31",
+   "downstox": 20.7,
+   "other": 20.78,
+   "source": "Nippon India MF product note (NSE data)",
+   "type": "month-end",
+   "url": "https://mf.nipponindiaim.com/FundsAndPerformance/ProductNotes/NipponIndia-Index-Fund-Nifty-50-Plan-July-2026.pdf"
+  },
+  {
+   "date": "2026-08-31",
+   "downstox": 20.4,
+   "other": 20.36,
+   "source": "NSE Indices factsheet and Index Dashboard Aug 2026",
+   "type": "primary, month-end",
+   "url": "https://www.niftyindices.com/Factsheet/ind_nifty50.pdf"
+  }
+ ],
+ "ratio_evidence": [
+  {
+   "when": "31 Mar 2021, NSE switch day (this workbook, Summary!B9)",
+   "ratio": 1.205,
+   "source": "NSE P/E 40.43 (30 Mar, standalone) and 33.20 (31 Mar, consolidated)",
+   "url": "https://downstox.com/nifty-pe/nifty-50"
+  },
+  {
+   "when": "Dec 2020 (Bloomberg data)",
+   "ratio": 1.16,
+   "source": "The Hindu BusinessLine: \"consolidated earnings of Nifty are about 16 per cent higher\"",
+   "url": "https://www.thehindubusinessline.com/todays-paper/tp-investmentworld/article34010344.ece"
+  },
+  {
+   "when": "Average of the 10 years to 2020 (Bloomberg data)",
+   "ratio": 1.14,
+   "source": "The Hindu BusinessLine: \"on the average ... 14 per cent higher\"",
+   "url": "https://www.thehindubusinessline.com/todays-paper/tp-investmentworld/article34010344.ece"
+  },
+  {
+   "when": "Jan 2008 peak (P/E 26.5 standalone vs 23.3 consolidated)",
+   "ratio": 1.137,
+   "source": "The Hindu BusinessLine (Bloomberg data)",
+   "url": "https://www.thehindubusinessline.com/todays-paper/tp-investmentworld/article34010344.ece"
+  }
+ ],
+ "mofsl_eps": [
+  {
+   "fy": "FY16",
+   "eps": 393,
+   "note": "MOFSL India Strategy (Mar 2017): \"the eventual FY16 EPS (~INR393)\"; before this workbook's window"
+  },
+  {
+   "fy": "FY19",
+   "eps": 481,
+   "note": "MOFSL (Jun 2019), +6.7% YoY"
+  },
+  {
+   "fy": "FY21",
+   "eps": 539,
+   "note": "MOFSL via Mint (Jun 2021); first year where NSE is also on consolidated earnings"
+  },
+  {
+   "fy": "FY22",
+   "eps": 737,
+   "note": "MOFSL interim 4QFY22 review via Zee Business/PTI (May 2022)"
+  },
+  {
+   "fy": "FY23",
+   "eps": 806,
+   "note": "MOFSL via BQ Prime (Jul 2023)"
+  },
+  {
+   "fy": "FY24",
+   "eps": 1005,
+   "note": "MOFSL (31 May 2024), +24% YoY"
+  },
+  {
+   "fy": "FY25",
+   "eps": 1013,
+   "note": "MOFSL (Jun 2025), +1% YoY"
+  },
+  {
+   "fy": "FY26",
+   "eps": 1065,
+   "note": "MOFSL via ET Now / The Adviser Times (Jun 2026), +5% YoY"
+  }
+ ],
+ "text": {
+  "c1_title": "Until 2019 the Nifty rose on a rising P/E. Since then, earnings have done the lifting.",
+  "c1_sub1": "Over ten years the Nifty rose 2.6 times and its earnings 2.7 to 2.8 times (like-for-like), so its P/E ends a little below where it started.",
+  "c1_sub2": "NSE switched from standalone to consolidated earnings on 31 Mar 2021, which cut its P/E from 40.4x to 33.2x overnight. Lighter lines show the old basis.",
+  "c1_foot1": "Source: NSE Indices (Nifty 50 P/E, trailing four quarters, month-end; via Downstox, checked against NSE Index Dashboards), Yahoo Finance (Nifty 50 daily closes). Earnings per unit = Nifty close ÷ NSE P/E. Data to 28 Sep 2026.",
+  "c1_foot2": "Like-for-like: pre-2021 standalone earnings restated to a consolidated basis with a ratio of 1.14 (Bloomberg 10-year average) to 1.205 (NSE's switch day). Motilal Oswal's tally of actual Nifty EPS rose from ₹393 (FY16) to ₹1,065 (FY26), 2.7x.",
+  "disclaimer": "1 Finance | SEBI Registered Investment Advisor. This content is for information and educational purposes only. Please consult a Qualified Financial Advisor before making investment decisions.",
+  "ref_name": "Latest level (19.3x)"
+ },
+ "method_lines": [
+  [
+   "How this workbook was built",
+   true
+  ],
+  [
+   "1. Nifty 50 daily closes, 1 Sep 2016 to 28 Sep 2026, come from Yahoo Finance (^NSEI, NSE data). Every year was transcribed twice by independent agents and the two copies were diffed; all rows matched, and every month-end close matches Yahoo's monthly table. One missing day (29 Mar 2019) was filled from Yahoo's monthly table.",
+   false
+  ],
+  [
+   "2. NSE's Nifty 50 P/E (index market cap divided by trailing four-quarter earnings, as NSE Indices publishes it daily) is taken at each month-end from Downstox, which republishes NSE's series. 26 of these values were checked against NSE's own monthly Index Dashboards and Nippon India MF's daily notes; the largest gap was 0.08, which is Downstox's one-decimal rounding. September 2026 uses the 28 Sep 2026 reading (19.26).",
+   false
+  ],
+  [
+   "3. Earnings per unit = Nifty close / NSE P/E. This is NSE's trailing earnings for the index, as NSE counts them.",
+   false
+  ],
+  [
+   "4. On 31 Mar 2021 NSE switched from standalone to consolidated earnings. The P/E fell from 40.43 to 33.20 overnight while the index moved about 1%, so consolidated earnings were about 20.5% higher than standalone that day (Summary!B9).",
+   false
+  ],
+  [
+   "5. Like-for-like columns multiply pre-2021 earnings by a ratio (Summary!B11) to put them on a consolidated basis. The ratio was not constant: Bloomberg data put the 10-year average at 1.14 and Dec 2020 at 1.16, against 1.205 at NSE's switch. The Summary shows results at both ends of that range.",
+   false
+  ],
+  [
+   "6. Motilal Oswal's bottom-up tally of actual Nifty EPS (FY16 ₹393 to FY26 ₹1,065, 2.7x) is shown on the Validation sheet as an independent check.",
+   false
+  ],
+  [
+   "",
+   false
+  ],
+  [
+   "What the numbers are, and what they are not",
+   true
+  ],
+  [
+   "NSE's P/E is a trailing measure: it divides today's price by the last four quarters of reported profit. It is not the forward (expected-earnings) P/E that Bloomberg charts use, so its levels are higher; on 28 Sep 2026 NSE showed 19.3x while Bloomberg's forward P/E was about 17x.",
+   false
+  ],
+  [
+   "Long-run \"average Nifty P/E\" figures quoted in the press (23x to 27x over 10 years) mostly mix the standalone and consolidated eras, so they overstate the average on today's basis. The consolidated-era median here is about 22x.",
+   false
+  ],
+  [
+   "The Nifty figures are the price index, without dividends. The total-return index grew about 1.3 percentage points a year faster over the ten years to July 2026 (NSE via Bajaj Finserv AMC).",
+   false
+  ],
+  [
+   "",
+   false
+  ],
+  [
+   "Sources",
+   true
+  ],
+  [
+   "NSE Indices: Nifty 50 P/E methodology (consolidated trailing four quarters), https://www.niftyindices.com/resources/index-concepts/price-earnings-ratio",
+   false
+  ],
+  [
+   "Downstox, Nifty 50 PE ratio monthly history (NSE Indices data), https://downstox.com/nifty-pe/nifty-50",
+   false
+  ],
+  [
+   "NSE Indices monthly Index Dashboards (Dec 2016 to Mar 2026), hosted at mondovisione.com; Nippon India MF \"Markets for You\" daily notes. URLs on the Validation sheet.",
+   false
+  ],
+  [
+   "Yahoo Finance, NIFTY 50 (^NSEI) historical data, https://finance.yahoo.com/quote/%5ENSEI/history/",
+   false
+  ],
+  [
+   "The Economic Times (23 Feb 2021): NSE to calculate P/E on consolidated earnings from 31 Mar 2021.",
+   false
+  ],
+  [
+   "The Hindu BusinessLine (Mar 2021, Bloomberg data): consolidated earnings about 16% above standalone in Dec 2020 and 14% above on average over 10 years.",
+   false
+  ],
+  [
+   "Motilal Oswal Financial Services: India Strategy reports (FY16 EPS ~₹393; FY19 ₹481; FY21 to FY26 as on the Validation sheet).",
+   false
+  ],
+  [
+   "PrimeInvestor (Dec 2019): Nifty earnings growth \"barely 2 per cent a year\" over the previous five years. ICICI Direct (2024 strategy): Nifty EPS CAGR 2% over FY17-20.",
+   false
+  ],
+  [
+   "Nippon India MF (28 Sep 2026): Nifty 50 P/E 19.26.",
+   false
+  ]
+ ]
+}

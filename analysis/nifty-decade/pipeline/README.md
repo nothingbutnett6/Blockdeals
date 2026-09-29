@@ -1,0 +1,9 @@
+# How the ten-year Nifty chart was built
+
+1. `data/nifty50_daily_close_2016-09_to_2026-09-28.csv`: Nifty 50 (^NSEI) daily closes from Yahoo Finance history pages. Each year was transcribed twice by independent agents and diffed (all 2,484 rows matched); every month-end close matches Yahoo's monthly table. Yahoo's daily table has no row for 29 Mar 2019, so that close (11,623.90) was taken from Yahoo's March 2019 monthly row.
+2. `data/nse_pe_monthly_downstox.csv`: NSE's Nifty 50 P/E at each month-end, as republished by Downstox (https://downstox.com/nifty-pe/nifty-50). Values have one decimal except year-ends (two decimals). The September 2026 row in this file is the mid-month reading (19.7 on 18 Sep); `build_decade.py` replaces it with the 28 Sep 2026 reading of 19.26 from `inputs.json`.
+3. `inputs.json`: the switch-day values (30 and 31 Mar 2021), the latest P/E, the 26 cross-check values against NSE Index Dashboards and Nippon India notes, the evidence on the consolidated/standalone earnings ratio, Motilal Oswal's EPS tally, and the chart text.
+4. `build_decade.py`: writes the workbook. Earnings per unit, the like-for-like restatement, every summary figure and the chart reference line are Excel formulas, recalculated with LibreOffice (0 errors). The charts are XY charts, so each earnings basis is its own series and the 2021 break needs no blank cells.
+5. The PNG is rendered from the workbook's Chart sheet with `../../nifty-pe-earnings/pipeline/render.py` (LibreOffice to PDF, then rasterised).
+
+Like-for-like figures multiply pre-2021 standalone earnings by a ratio between 1.14 (Bloomberg's 10-year average consolidated premium, per The Hindu BusinessLine) and 1.205 (NSE's own switch day). The workbook's Summary sheet shows results at both ends.
