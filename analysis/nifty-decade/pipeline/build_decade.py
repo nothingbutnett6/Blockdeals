@@ -115,6 +115,8 @@ f(ws, 'A10', 'Consolidated / standalone, Bloomberg 10-year average (input)'); f(
 f(ws, 'C10', 'The Hindu BusinessLine, Mar 2021: "on the average ... 14 per cent higher"', None, INK2, size=9)
 f(ws, 'A11', 'Ratio used for the like-for-like columns (input)', bold=True); f(ws, 'B11', '=B9', '0.000', BLUE_INPUT, bold=True)
 f(ws, 'C11', 'Default: the switch-day ratio. Type 1.14 (or anything else) to see how the like-for-like columns move.', None, INK2, size=9)
+f(ws, 'A12', 'Low estimate, PrimeInvestor Dec 2019 (input)'); f(ws, 'B12', CFG['low_ratio'], '0.000', BLUE_INPUT)
+f(ws, 'C12', 'PrimeInvestor: consolidated earnings "about 5 per cent higher than the standalone earnings"', None, INK2, size=9)
 
 # ================================================================= Monthly
 ws = ws_m
@@ -144,7 +146,7 @@ ws.cell(row=sw_row, column=9, value=('First consolidated reading (31 Mar 2021). 
 
 # ================================================================= Summary tables
 ws = ws_s
-hdr_row = 13
+hdr_row = 14
 labels = ['Point in time', 'Month-end', 'Nifty 50', 'NSE P/E as published', 'Basis', 'EPS as published (₹)',
           'EPS like-for-like (₹)', 'P/E like-for-like', 'Price multiple to latest', 'EPS multiple to latest (like-for-like)',
           'P/E multiple to latest (like-for-like)']
@@ -201,11 +203,11 @@ for k, (lab, a, b) in enumerate(halves):
 
 S0 = H0 + 5
 f(ws, (S0, 1), 'Like-for-like range: pre-2021 earnings restated to a consolidated basis', bold=True, color=INK)
-for j, lab in enumerate(['Measure', 'Ratio 1.14 (Bloomberg 10-yr average)', 'Switch-day ratio'], start=1):
+for j, lab in enumerate(['Measure', 'Ratio 1.05 (PrimeInvestor, low)', 'Ratio 1.14 (Bloomberg 10-yr average)', 'Switch-day ratio'], start=1):
     c = ws.cell(row=S0 + 1, column=j, value=lab); c.font = Font(name=BODY, bold=True, size=10, color=INK); c.fill = hdr_fill
     c.alignment = Alignment(wrap_text=True)
 ws.row_dimensions[S0 + 1].height = 30
-f(ws, (S0 + 2, 1), 'Ratio'); f(ws, (S0 + 2, 2), '=$B$10', '0.000'); f(ws, (S0 + 2, 3), '=$B$9', '0.000')
+f(ws, (S0 + 2, 1), 'Ratio'); f(ws, (S0 + 2, 2), '=$B$12', '0.000'); f(ws, (S0 + 2, 3), '=$B$10', '0.000'); f(ws, (S0 + 2, 4), '=$B$9', '0.000')
 sens = [
     ('Earnings multiple over the decade', f'=$F${LATEST}/($F${P0}*{{R}})', '0.00"x"'),
     ('P/E ten years ago, restated', f'=$D${P0}/{{R}}', '0.0"x"'),
@@ -220,6 +222,7 @@ for k, (lab, formula, fmt) in enumerate(sens):
     f(ws, (rr, 1), lab)
     f(ws, (rr, 2), formula.replace('{R}', f'$B${S0 + 2}'), fmt)
     f(ws, (rr, 3), formula.replace('{R}', f'$C${S0 + 2}'), fmt)
+    f(ws, (rr, 4), formula.replace('{R}', f'$D${S0 + 2}'), fmt)
 SENS = {'eps_mult': S0 + 3, 'pe_then': S0 + 4, 'pe_chg': S0 + 5, 'eps_mult_h2': S0 + 6, 'pe_2019': S0 + 7, 'pe_chg_h2': S0 + 8, 'pe_mar20': S0 + 9}
 
 Q0 = S0 + 3 + len(sens) + 1
@@ -354,11 +357,14 @@ def chart_header(ws, title, sub1, sub2):
     for col in range(1, 23):
         ws.column_dimensions[get_column_letter(col)].width = 7.2
     ws.column_dimensions['A'].width = 2.5
-    for r, hgt in {1: 10, 2: 30, 3: 18, 4: 18, 5: 8, 6: 34, 7: 6}.items():
+    for r, hgt in {1: 10, 2: 30, 3: 30, 4: 30, 5: 8, 6: 34, 7: 6}.items():
         ws.row_dimensions[r].height = hgt
-    ws['B2'] = title; ws['B2'].font = Font(name=BRAND, size=20, bold=True, color=INK)
-    ws['B3'] = sub1; ws['B3'].font = Font(name=BRAND, size=11, color=INK2)
-    ws['B4'] = sub2; ws['B4'].font = Font(name=BRAND, size=11, color=INK2)
+    ws['B2'] = title; ws['B2'].font = Font(name=BRAND, size=17, bold=True, color=INK)
+    for r, txt in ((3, sub1), (4, sub2)):
+        ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=19)
+        c = ws.cell(row=r, column=2, value=txt)
+        c.font = Font(name=BRAND, size=11, color=INK2)
+        c.alignment = Alignment(wrap_text=True, vertical='top')
     try:
         logo = XLImage(LOGO); logo.width, logo.height = 58, 58; ws.add_image(logo, 'U2')
     except Exception as e:
@@ -375,8 +381,12 @@ def strip(ws, items):
 
 def footer(ws, start_row, lines):
     for k, (txt, ital) in enumerate(lines):
-        c = ws.cell(row=start_row + k, column=2, value=txt)
+        r = start_row + k
+        ws.merge_cells(start_row=r, start_column=2, end_row=r, end_column=22)
+        c = ws.cell(row=r, column=2, value=txt)
         c.font = Font(name=BRAND, size=8, color=INK3, italic=ital)
+        c.alignment = Alignment(wrap_text=True, vertical='top')
+        ws.row_dimensions[r].height = 24 if len(txt) > 190 else 13
 
 
 def page(ws, last_row):
@@ -396,10 +406,11 @@ T = CFG['text']
 ws = ws_c1
 chart_header(ws, T['c1_title'], T['c1_sub1'], T['c1_sub2'])
 L = S_['LATEST']; P = S_['P0']
+E0 = S_['S0'] + 3
 strip(ws, [
     ('B6', f'="Nifty 50   "&TEXT(Summary!C{P},"#,##0")&"  →  "&TEXT(Summary!C{L},"#,##0")&"   ("&TEXT(Summary!I{P},"0.0")&"x)"', C_PRICE),
-    ('I6', f'="Earnings per unit   ₹"&TEXT(Summary!F{P},"#,##0")&"  →  ₹"&TEXT(Summary!F{L},"#,##0")&"   ("&TEXT(Summary!C{S_["S0"] + 3},"0.0")&"x to "&TEXT(Summary!B{S_["S0"] + 3},"0.0")&"x like-for-like)"', C_EPS),
-    ('Q6', f'="NSE P/E   "&TEXT(Summary!D{P},"0.0")&"x  →  "&TEXT(Summary!D{L},"0.0")&"x"', C_PE),
+    ('I6', f'="Profit per unit   ₹"&TEXT(Summary!F{P},"#,##0")&"*  →  ₹"&TEXT(Summary!F{L},"#,##0")&"   ("&TEXT(Summary!D{E0},"0.0")&"x to "&TEXT(Summary!C{E0},"0.0")&"x)"', C_EPS),
+    ('Q6', f'="P/E   "&TEXT(Summary!D{P},"0.0")&"x*  →  "&TEXT(Summary!D{L},"0.0")&"x   ("&TEXT(Summary!D{E0 + 2},"+0%;-0%")&" to "&TEXT(Summary!C{E0 + 2},"+0%;-0%")&")"', C_PE),
 ])
 # reference line for the latest P/E: two points, both formulas
 R0 = S_['Q0'] + 7
@@ -410,28 +421,28 @@ f(ws_s, (R0 + 2, 1), f'=Monthly!A{M1}', 'dd-mmm-yyyy'); f(ws_s, (R0 + 2, 2), f'=
 c_price = new_chart()
 line(c_price, ws_d, 1, 2, d_start, D1, C_PRICE, 1.5, 'Nifty 50 (index level, daily close)')
 style(c_price, 0, 30000, 5000, '#,##0', 'Nifty 50')
-c_price.height, c_price.width = 6.3, 29.5
+c_price.height, c_price.width = 7.0, 37.5
 
 c_eps = new_chart()
-s_e1 = line(c_eps, ws_m, 1, 5, M0, sw_row - 1, C_EPS_SA, 2.0, 'Earnings per unit, standalone basis (to Feb 2021)')
-s_e2 = line(c_eps, ws_m, 1, 5, sw_row, M1, C_EPS, 2.25, 'Consolidated basis (from Mar 2021)')
-style(c_eps, 0, 1400, 200, '"₹"#,##0', 'Trailing earnings (₹)')
+s_e1 = line(c_eps, ws_m, 1, 5, M0, sw_row - 1, C_EPS_SA, 2.0, 'Profit per unit, old method: parent company only (to Feb 2021)')
+s_e2 = line(c_eps, ws_m, 1, 5, sw_row, M1, C_EPS, 2.25, 'New method, with subsidiaries (from Mar 2021)')
+style(c_eps, 0, 1400, 200, '"₹"#,##0', 'Profit per unit, last 4 quarters (₹)')
 label_points(s_e2, [M1 - sw_row], ['t'])
-c_eps.height, c_eps.width = 6.3, 29.5
+c_eps.height, c_eps.width = 7.0, 37.5
 
 c_pe = new_chart()
-s_p1 = line(c_pe, ws_m, 1, 3, M0, sw_row - 1, C_PE_SA, 2.0, 'NSE P/E, standalone earnings (to Feb 2021)')
-s_p2 = line(c_pe, ws_m, 1, 3, sw_row, M1, C_PE, 2.25, 'Consolidated earnings (from Mar 2021)')
+s_p1 = line(c_pe, ws_m, 1, 3, M0, sw_row - 1, C_PE_SA, 2.0, 'NSE P/E, old method (to Feb 2021)')
+s_p2 = line(c_pe, ws_m, 1, 3, sw_row, M1, C_PE, 2.25, 'New method (from Mar 2021)')
 line(c_pe, ws_s, 1, 2, R0 + 1, R0 + 2, C_REF, 1.0, T['ref_name'], dash='dash')
-style(c_pe, 10, 45, 5, '"\u2007\u2007\u2007"0"x"', 'NSE trailing P/E')
+style(c_pe, 10, 45, 5, '"\u2007\u2007\u2007"0"x"', 'NSE P/E (trailing)')
 label_points(s_p2, [M1 - sw_row], ['b'])
-c_pe.height, c_pe.width = 6.3, 29.5
+c_pe.height, c_pe.width = 7.0, 37.5
 
 ws.add_chart(c_price, 'B8')
-ws.add_chart(c_eps, 'B21')
-ws.add_chart(c_pe, 'B34')
-footer(ws, 48, [(T['c1_foot1'], False), (T['c1_foot2'], False), ('', False), (T['disclaimer'], True)])
-page(ws, 52)
+ws.add_chart(c_eps, 'B23')
+ws.add_chart(c_pe, 'B38')
+footer(ws, 53, [(T['c1_foot1'], False), (T['c1_foot2'], False), ('', False), (T['disclaimer'], True)])
+page(ws, 57)
 
 # fonts for body sheets
 for sh in (ws_s, ws_v):

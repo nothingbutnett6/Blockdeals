@@ -222,19 +222,19 @@
   {
    "when": "31 Mar 2021, NSE switch day (this workbook, Summary!B9)",
    "ratio": 1.205,
-   "source": "NSE P/E 40.43 (30 Mar, standalone) and 33.20 (31 Mar, consolidated)",
+   "source": "NSE P/E 40.43 on 30 Mar (standalone) and 33.20 on 31 Mar (consolidated)",
    "url": "https://downstox.com/nifty-pe/nifty-50"
   },
   {
-   "when": "Dec 2020 (Bloomberg data)",
+   "when": "Early 2021, earnings to Dec 2020 (Bloomberg data)",
    "ratio": 1.16,
-   "source": "The Hindu BusinessLine: \"consolidated earnings of Nifty are about 16 per cent higher\"",
+   "source": "The Hindu BusinessLine (Mar 2021): \"about 16 per cent higher\"; the article's own figures (Rs 420 vs Rs 371) imply about 13%",
    "url": "https://www.thehindubusinessline.com/todays-paper/tp-investmentworld/article34010344.ece"
   },
   {
    "when": "Average of the 10 years to 2020 (Bloomberg data)",
    "ratio": 1.14,
-   "source": "The Hindu BusinessLine: \"on the average ... 14 per cent higher\"",
+   "source": "The Hindu BusinessLine (Mar 2021): \"on the average ... 14 per cent higher\"",
    "url": "https://www.thehindubusinessline.com/todays-paper/tp-investmentworld/article34010344.ece"
   },
   {
@@ -242,6 +242,12 @@
    "ratio": 1.137,
    "source": "The Hindu BusinessLine (Bloomberg data)",
    "url": "https://www.thehindubusinessline.com/todays-paper/tp-investmentworld/article34010344.ece"
+  },
+  {
+   "when": "Dec 2019 (low estimate)",
+   "ratio": 1.05,
+   "source": "PrimeInvestor (Dec 2019): \"consolidated earnings of the Nifty firms are about 5 per cent higher than the standalone earnings\"",
+   "url": "https://primeinvestor.in/reports/what-they-dont-tell-you-about-the-nifty-pe/"
   }
  ],
  "mofsl_eps": [
@@ -287,11 +293,11 @@
   }
  ],
  "text": {
-  "c1_title": "Until 2019 the Nifty rose on a rising P/E. Since then, earnings have done the lifting.",
-  "c1_sub1": "Over ten years the Nifty rose 2.6 times and its earnings 2.7 to 2.8 times (like-for-like), so its P/E ends a little below where it started.",
-  "c1_sub2": "NSE switched from standalone to consolidated earnings on 31 Mar 2021, which cut its P/E from 40.4x to 33.2x overnight. Lighter lines show the old basis.",
-  "c1_foot1": "Source: NSE Indices (Nifty 50 P/E, trailing four quarters, month-end; via Downstox, checked against NSE Index Dashboards), Yahoo Finance (Nifty 50 daily closes). Earnings per unit = Nifty close ÷ NSE P/E. Data to 28 Sep 2026.",
-  "c1_foot2": "Like-for-like: pre-2021 standalone earnings restated to a consolidated basis with a ratio of 1.14 (Bloomberg 10-year average) to 1.205 (NSE's switch day). Motilal Oswal's tally of actual Nifty EPS rose from ₹393 (FY16) to ₹1,065 (FY26), 2.7x.",
+  "c1_title": "Until 2019, the Nifty rose because investors paid more for each rupee of profit. Since then, profits have done the lifting.",
+  "c1_sub1": "Over ten years the Nifty grew 2.6 times and the profit behind it about 2.7 to 2.8 times, after adjusting for NSE's 2021 change in how profit is counted. So investors now pay the same or a little less for each rupee of profit as they did in 2016.",
+  "c1_sub2": "On 31 Mar 2021 NSE began counting subsidiaries' profits as well as the parent company's (consolidated instead of standalone earnings), which cut its P/E from 40.4x to 33.2x overnight. Lighter lines show the old method.",
+  "c1_foot1": "Source: NSE Indices (Nifty 50 P/E, trailing four quarters, month-end; via Downstox, checked against NSE Index Dashboards), Yahoo Finance (Nifty 50 daily closes). Profit per unit = Nifty close ÷ NSE P/E. Latest reading 28 Sep 2026.",
+  "c1_foot2": "* Old method (parent-company profit only). Changes in brackets are like-for-like: pre-2021 profit multiplied by 1.14 (Bloomberg's 10-year average gap) to 1.205 (the gap on NSE's switch day). A lower 2019 estimate of 1.05 (PrimeInvestor) would put the profit multiple at 3.1x. Motilal Oswal's separate count of Nifty EPS: ₹393 (FY16) to ₹1,065 (FY26), 2.7x.",
   "disclaimer": "1 Finance | SEBI Registered Investment Advisor. This content is for information and educational purposes only. Please consult a Qualified Financial Advisor before making investment decisions.",
   "ref_name": "Latest level (19.3x)"
  },
@@ -301,11 +307,11 @@
    true
   ],
   [
-   "1. Nifty 50 daily closes, 1 Sep 2016 to 28 Sep 2026, come from Yahoo Finance (^NSEI, NSE data). Every year was transcribed twice by independent agents and the two copies were diffed; all rows matched, and every month-end close matches Yahoo's monthly table. One missing day (29 Mar 2019) was filled from Yahoo's monthly table.",
+   "1. Nifty 50 daily closes, 1 Sep 2016 to 28 Sep 2026, come from Yahoo Finance (^NSEI, NSE data). Every year was transcribed twice by independent agents and the two copies were diffed: all 2,483 days in Yahoo's daily table matched, and every month-end close matches Yahoo's monthly table. The one missing day (29 Mar 2019) was filled from Yahoo's monthly table, making 2,484 days.",
    false
   ],
   [
-   "2. NSE's Nifty 50 P/E (index market cap divided by trailing four-quarter earnings, as NSE Indices publishes it daily) is taken at each month-end from Downstox, which republishes NSE's series. 26 of these values were checked against NSE's own monthly Index Dashboards and Nippon India MF's daily notes; the largest gap was 0.08, which is Downstox's one-decimal rounding. September 2026 uses the 28 Sep 2026 reading (19.26).",
+   "2. NSE's Nifty 50 P/E (index market cap divided by trailing four-quarter earnings, as NSE Indices publishes it daily) is taken at each month-end from Downstox, which republishes NSE's series. 25 month-end values plus the 30 Mar 2021 daily reading were checked against NSE's own monthly Index Dashboards and Nippon India MF's notes; all but one agree within 0.05 (Downstox's one-decimal rounding) and the largest gap is 0.08 (Jul 2026, against a Nippon India product note). September 2026 uses the 28 Sep 2026 daily reading (19.26), not a month-end.",
    false
   ],
   [
@@ -317,7 +323,7 @@
    false
   ],
   [
-   "5. Like-for-like columns multiply pre-2021 earnings by a ratio (Summary!B11) to put them on a consolidated basis. The ratio was not constant: Bloomberg data put the 10-year average at 1.14 and Dec 2020 at 1.16, against 1.205 at NSE's switch. The Summary shows results at both ends of that range.",
+   "5. Like-for-like columns multiply pre-2021 earnings by a ratio (Summary!B11) to put them on a consolidated basis. The ratio changed over time: Bloomberg data put the 10-year average at 1.14 and early 2021 at about 1.13 to 1.16, NSE's switch day gave 1.205, and PrimeInvestor estimated only 1.05 in Dec 2019. The Summary shows results at 1.05, 1.14 and 1.205; the chart uses 1.14 to 1.205, the range best supported by NSE's own data and Bloomberg.",
    false
   ],
   [
@@ -337,11 +343,11 @@
    false
   ],
   [
-   "Long-run \"average Nifty P/E\" figures quoted in the press (23x to 27x over 10 years) mostly mix the standalone and consolidated eras, so they overstate the average on today's basis. The consolidated-era median here is about 22x.",
+   "Some long-run \"average Nifty P/E\" figures (Business Standard 26.7x, Craytheon 23.28x over 10 years) include the higher standalone readings from before 2021, which makes today's P/E look further below normal than it is like-for-like. The consolidated-era median here is 22.0x.",
    false
   ],
   [
-   "The Nifty figures are the price index, without dividends. The total-return index grew about 1.3 percentage points a year faster over the ten years to July 2026 (NSE via Bajaj Finserv AMC).",
+   "The Nifty figures are the price index, without dividends. The total-return index grew about 1.35 percentage points a year faster over the ten years to 17 Jul 2026 (12.39% against 11.04% a year; NSE return profile via Bajaj Finserv AMC).",
    false
   ],
   [
@@ -387,6 +393,11 @@
   [
    "Nippon India MF (28 Sep 2026): Nifty 50 P/E 19.26.",
    false
+  ],
+  [
+   "PrimeInvestor (Dec 2019): consolidated Nifty earnings \"about 5 per cent higher than the standalone earnings\".",
+   false
   ]
- ]
+ ],
+ "low_ratio": 1.05
 }
